@@ -10,6 +10,8 @@
 		13A18BD320AFB58A00E62383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A18BD220AFB58A00E62383 /* AppDelegate.swift */; };
 		13A18BD520AFB58D00E62383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13A18BD420AFB58D00E62383 /* Assets.xcassets */; };
 		13A18BD820AFB58D00E62383 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A18BD620AFB58D00E62383 /* MainMenu.xib */; };
+		13A18BE120AFB98100E62383 /* TickerMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A18BE020AFB98100E62383 /* TickerMenuController.swift */; };
+		13A18BE320AFBA8500E62383 /* AlphaAdvantageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A18BE220AFBA8500E62383 /* AlphaAdvantageAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		13A18BD720AFB58D00E62383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		13A18BD920AFB58D00E62383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13A18BDA20AFB58D00E62383 /* StockTicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StockTicker.entitlements; sourceTree = "<group>"; };
+		13A18BE020AFB98100E62383 /* TickerMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerMenuController.swift; sourceTree = "<group>"; };
+		13A18BE220AFBA8500E62383 /* AlphaAdvantageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaAdvantageAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 				13A18BD620AFB58D00E62383 /* MainMenu.xib */,
 				13A18BD920AFB58D00E62383 /* Info.plist */,
 				13A18BDA20AFB58D00E62383 /* StockTicker.entitlements */,
+				13A18BE020AFB98100E62383 /* TickerMenuController.swift */,
+				13A18BE220AFBA8500E62383 /* AlphaAdvantageAPI.swift */,
 			);
 			path = StockTicker;
 			sourceTree = "<group>";
@@ -92,6 +98,11 @@
 				TargetAttributes = {
 					13A18BCE20AFB58A00E62383 = {
 						CreatedOnToolsVersion = 9.3.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -130,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13A18BE320AFBA8500E62383 /* AlphaAdvantageAPI.swift in Sources */,
+				13A18BE120AFB98100E62383 /* TickerMenuController.swift in Sources */,
 				13A18BD320AFB58A00E62383 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +278,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = StockTicker/StockTicker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = StockTicker/Info.plist;
@@ -283,7 +295,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = StockTicker/StockTicker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = StockTicker/Info.plist;
