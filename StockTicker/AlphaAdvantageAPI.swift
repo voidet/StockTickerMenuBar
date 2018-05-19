@@ -9,7 +9,7 @@ struct Stock {
 class AlphaAdvantageAPI {
   let BASE_URL = "https://api.iextrading.com/1.0/stock/market/batch?symbols=%@&types=quote&range=1m&last=5"
   
-  func fetchStocks(_ symbols: [String]) {
+  func fetchStocks(_ symbols: [String], completion: @escaping (([Stock]) -> Void)) {
     let session = URLSession.shared
     let urlString = String(format: BASE_URL, symbols.joined(separator: ","))
     let escapedQuery = urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
@@ -27,7 +27,9 @@ class AlphaAdvantageAPI {
       if let httpResponse = response as? HTTPURLResponse {
         switch httpResponse.statusCode {
         case 200: // all good!
-          let _ = self.parseStocks(data!)
+          if let stocks = self.parseStocks(data!) {
+            completion(stocks)
+          }
         case 401: // unauthorized
           NSLog("weather api returned an 'unauthorized' response. Did you set your API key?")
         default:

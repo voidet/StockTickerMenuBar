@@ -11,6 +11,8 @@ import Cocoa
 class TickerMenuController: NSObject {
   
   @IBOutlet weak var statusMenu: NSMenu!
+  @IBOutlet weak var stockPrice: NSMenuItem!
+  
   let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
   let alphaAdvantageAPI = AlphaAdvantageAPI()
   
@@ -22,7 +24,9 @@ class TickerMenuController: NSObject {
   }
   
   @IBAction func updateClicked(_ sender: NSMenuItem) {
-    alphaAdvantageAPI.fetchStocks(["APPL", "VTI", "VXUS"])
+    alphaAdvantageAPI.fetchStocks(["APPL", "VTI", "VXUS"], completion: { stocks in
+      self.statusItem.title = "\(stocks.first!.symbol) $\(stocks.first!.price)"
+    })
   }
   
   @IBAction func quitClicked(_ sender: NSMenuItem) {

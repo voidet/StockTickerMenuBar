@@ -16,6 +16,7 @@
         <customObject id="waR-7C-Egs" customClass="TickerMenuController" customModule="StockTicker" customModuleProvider="target">
             <connections>
                 <outlet property="statusMenu" destination="dG4-Wm-7aN" id="AU7-vP-TVt"/>
+                <outlet property="stockPrice" destination="haI-Lm-nya" id="iwl-gG-yKv"/>
             </connections>
         </customObject>
         <menu id="dG4-Wm-7aN">
@@ -26,7 +27,11 @@
                         <action selector="updateClicked:" target="waR-7C-Egs" id="mLU-vq-eXo"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="Xd3-l5-8WX"/>
+                <menuItem isSeparatorItem="YES" id="jvb-84-chm"/>
+                <menuItem title="Stock" id="haI-Lm-nya">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="KhK-UV-ekD"/>
                 <menuItem title="Quit" id="b3Q-R7-io6">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
